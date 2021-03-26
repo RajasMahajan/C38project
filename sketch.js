@@ -43,6 +43,10 @@ function setup() {
 
 function draw() {
   background("red");
+  back.y=back.y+5;
+  if(back.y>400){
+    back.y=300
+  }
     if(gameState===PLAY){
       if(frameCount%120===0){
      starf=createSprite(300,0,20,20);
