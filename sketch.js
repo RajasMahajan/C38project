@@ -43,6 +43,7 @@ function setup() {
 
 function draw() {
   background("red");
+  camera.y=fighter.y;
   back.y=back.y+5;
   if(back.y>400){
     back.y=300
@@ -91,10 +92,13 @@ function draw() {
       if(keyDown("right")){
         fighter.x=fighter.x+3;
       }
+      if(keyDown("up")){
+        fighter.y=fighter.y-3;
+      }
       if(keyWentDown("enter")){
-      var laser=createSprite(fighter.x,380,7,40)
+      var laser=createSprite(fighter.x,fighter.y-15,7,40)
       laser.shapeColor="red";
-      laser.velocityY=-3;
+      laser.velocityY=-5;
       laserG.add(laser);
       }
     if(frameCount%150===0){
